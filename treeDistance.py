@@ -1,4 +1,4 @@
-# Editted off of https://github.com/timtadh/zhang-shasha
+# Edited off of https://github.com/timtadh/zhang-shasha
 
 # tree.label()
 # tree[i] is child i
