@@ -7,3 +7,7 @@ and associated with a research grant shared by a pair of profs
 
 IMPORTANT NOTE
 the stanford core folder is missing the models.jar file, which is too large for github.
+
+
+
+SEE TODO.txt for more on the list of priorities.
