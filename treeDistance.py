@@ -1,10 +1,15 @@
 # Edited off of https://github.com/timtadh/zhang-shasha
 
+# TODO: Replace node distance comparator with an actual system
+
+# Blair bdrum047@uottawa.ca
+
 # tree.label()
 # tree[i] is child i
 
 import zss, re
 
+# Eventually remove this
 from editdist import distance
 
 from nltk.tree import *
@@ -62,16 +67,7 @@ class ottawaTree(object):
         return self
 
 
-def getA():
-    return ottawaTree.parse('(S (NP cat) (VP (V in) (NP (Det the) (N hat))))')
-
-def getB():
-    return ottawaTree.parse('(ROOT (VP poop) (NP poop))')
-
-
 def test(a, b):
-    #dist = zss.simple_distance(A, B, get_children, get_label, POS_difference)
+    #dist = zss.simple_distance(A, B, get_children, get_label, POS_difference)  # TODO
     dist = zss.simple_distance(a, b, ottawaTree.get_children, ottawaTree.get_label, distance)
-
-    print dist
-    #assert dist == 20
+    return dist
