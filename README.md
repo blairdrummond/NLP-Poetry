@@ -6,7 +6,7 @@ and associated with a research grant shared by a pair of profs
 
 ************
 
-Dependencies
+Dependencies:
 
 Java 8
 nltk
@@ -15,9 +15,12 @@ ADD MORE DETAIL
 
 ************
 
-IMPORTANT NOTE
+Important Note:
+
 the stanford core folder is missing the models.jar file, which is too large for github.
 
 ************
 
-SEE TODO.txt for more on the list of priorities.
+See:
+
+TODO.txt for more on the list of priorities.
