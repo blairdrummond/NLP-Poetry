@@ -163,8 +163,8 @@ for file in os.listdir(directory):
         # All Data gathered, do a little post-proccessing and write to file.
         write_string = "total # of stanzas : "     + str(total_stanzas)    + '\n' + \
                        "inline     stanzas : "+ str(internal_stanzas) + '\n' + \
-                       "break environments : (HEAD, LEFT, RIGHT) \n\n"     + \
-                       str(stanza_breaks) + '\n\nstanzas #\n ( # of </> , # of End , # of End </> )\n[ List of linebreak environments ]\n\n' 
+                       "break environments : ( HEAD, LEFT, RIGHT, Punctuation ) \n\n"     + \
+                       str(stanza_breaks) + '\n\nstanzas #\n ( # of </> , # of End , # of End </>, Punctuation )\n[ List of linebreak environments ]\n\n' 
 
         # append this new information, once per stanza
         for i in range(0, len(ends)):
