@@ -29,14 +29,14 @@ def cleanLine(s):
 
 
 def grab_file(f):
-    with open(os.path.join(directory, f + '.txt'), 'r') as fr:
+    with open(os.path.join(directory, 'poem.'+ f + '.txt'), 'r') as fr:
         read  = fr.read().split('\n')  # Parse Tree of Poem
     end = read.index('')
     return read[:end]
 
     
 def grab_stanza(f,s):
-    with open(os.path.join(directory, f + '.txt'), 'r') as fr:
+    with open(os.path.join(directory, 'poem.'+ f + '.txt'), 'r') as fr:
         read  = fr.read()  # Parse Tree of Poem
     l = read.replace('<//>', 'ignore', s).find('<//>')
     r = read.find('<//>', l+1)

@@ -9,8 +9,7 @@
 # WARNING: I used regex and I don't really know regex. The code SHOULD allow you to update jar versions in the 
 # stanford-core folder without out-dating this script, but if something goes awry they should be investigated.
 #
-# DEFAULT RAM TO ALLOCATE:
-place="$(pwd)"
+# place="$(pwd)"
 #
 #
 #
@@ -87,13 +86,8 @@ python .remove-tags.py "$input"
 sh ./.unicode-to-ascii.sh .temp/
 
 
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# IF SOMETHING IS WRONG, CHECK THIS REGEX
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 # Copy a file from stanford to output, then enter that directory
 # If statement checks whether the directory is immediately available, or if it needs to go through its parent directory.
-
 
 cp stanford\-corenlp*/CoreNLP-to-HTML.xsl .trees/xml/
 cd stanford\-corenlp* $*
@@ -101,22 +95,22 @@ cd stanford\-corenlp* $*
 
 #Start the tool
 echo
-echo Loading all .txt files in /input/
+echo Loading all .txt files in /"$input"/
 echo
 
 core=( $(find stanford\-corenlp\-[0-9]\.[0-9]\.[0-9]\.jar) )
 models=( $(find stanford\-corenlp\-[0-9]\.[0-9]\.[0-9]\-models\.jar) )
-ejml=( $(find ejml\-[0-9]*.[0-9]*.jar) )
+ejml=( $(find ejml\-[0-9]\.*[0-9]\.jar) )
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # IF SOMETHING IS WRONG, CHECK THE REGEX IN THE JAVA LINE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-java -cp "${core[0]}":"${models[0]}":xom.jar:joda-time.jar:jollyday.jar:"${ejml[0]}" -Xmx"$RAM" edu.stanford.nlp.pipeline.StanfordCoreNLP [ -props ../StanfordSettings.properties ] -filelist "$place"/.PoemsList.txt -replaceExtension -outputDirectory "$place"/.trees/
+java -cp "${core[0]}":"${models[0]}":xom.jar:joda-time.jar:jollyday.jar:"${ejml[0]}" -Xmx"$RAM" edu.stanford.nlp.pipeline.StanfordCoreNLP [ -props ../StanfordSettings.properties ] -filelist ../.PoemsList.txt -replaceExtension -outputDirectory ../.trees/
 
 echo "Finished building parse trees."
 
-cd "$place"
+cd ../
 
 python .xml-to-penn.py
 mv .trees/*.xml .trees/xml/
