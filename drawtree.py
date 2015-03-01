@@ -2,6 +2,8 @@
 # > python drawtree.py <poem number> <optional stanza number>
 # make sure that it is in the right directory
 
+# Blair bdrum047@uottawa.ca
+
 import nltk.compat
 import sys
 import os
