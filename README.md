@@ -9,7 +9,14 @@ and associated with a research grant shared by a pair of profs
 Dependencies:
 
 Java 8
+
+python 3
+
 nltk
+
+zss
+
+editdist
 
 ADD MORE DETAIL
 
