@@ -4,6 +4,9 @@ Syntactic Analysis of a corpus of poems
 A work in progress conducting a syntactic analysis of a corpora of poems as a part of an UROP project (Undergraduate Research Opprotunity Program),from the University Of Ottawa,
 It is also a component of a larger project funded by a SSHRC (Social Sciences and Humanities Research Council) research grant, "Poetry Computational Graphs", for which Dr. Chris Tanasescu is the Principle Investigator, and Dr. Diana Inkpen is the Co-Investigator.
 
+Home Website:
+http://artsites.uottawa.ca/margento/en/the-graph-poem/
+
 ************
 
 Dependencies:
