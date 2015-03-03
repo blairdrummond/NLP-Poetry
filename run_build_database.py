@@ -1,6 +1,8 @@
 # Crawl through the corpus and extract all of the data from poems.
 # This will need to expand as we start attaching values from our results
 
+# WORK IN PROGRESS!!!!!!!!!!!
+
 import os, re
 
 inpath  = 'corpus'
