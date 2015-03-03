@@ -231,9 +231,9 @@ WhasCategories = open(os.path.join(outpath, 'HasCategories.txt')   , 'w')
 Wpoets         = open(os.path.join(outpath, 'Poets.txt')           , 'w')
 Wpoems         = open(os.path.join(outpath, 'Poems.txt')           , 'w')
 
-Wcategories.write( 'INSERT INTO Categories VALUES ' + ';\n\nINSERT INTO Categories VALUES '.join( map( (lambda s: "('" + clean(s) + "')"),  all_categories))  + ';')
+Wcategories.write( 'INSERT INTO Categories VALUES ' + ';\nINSERT INTO Categories VALUES '.join( map( (lambda s: "('" + clean(s) + "')"),  all_categories))  + ';')
 
-Wpoems.write( 'INSERT INTO Poems VALUES ' + ';\n\nINSERT INTO Poems VALUES '.join( map( (lambda p: '(' + 
+Wpoems.write( 'INSERT INTO Poems VALUES ' + ';\nINSERT INTO Poems VALUES '.join( map( (lambda p: '(' + 
                                                                          p[1].name             + ', ' + 
                                                                          p[0].firstname        + ', ' +
                                                                          p[0].middlename        + ', ' +
@@ -243,7 +243,7 @@ Wpoems.write( 'INSERT INTO Poems VALUES ' + ';\n\nINSERT INTO Poems VALUES '.joi
                                                                          str(p[1].number)      + ')' ),  
                                                                 all_poems   )   ) + ';')
 
-WhasCategories.write( 'INSERT INTO HasCategories VALUES ' + ';\n\nINSERT INTO HasCategories VALUES '.join( map( (lambda p: '(' + 
+WhasCategories.write( 'INSERT INTO HasCategories VALUES ' + ';\nINSERT INTO HasCategories VALUES '.join( map( (lambda p: '(' + 
                                                           p[0][1].name + ', ' + 
                                                           p[0][0].firstname + ', ' + 
                                                           p[0][0].middlename + ', ' + 
@@ -251,7 +251,7 @@ WhasCategories.write( 'INSERT INTO HasCategories VALUES ' + ';\n\nINSERT INTO Ha
                                                           clean(p[1]) + "'" + ')' ),  
                                          all_has_categories )) + ';')
 
-Wpoets.write( 'INSERT INTO Poets VALUES ' + ';\n\nINSERT INTO Poets VALUES '.join( map( (lambda p: '(' +  
+Wpoets.write( 'INSERT INTO Poets VALUES ' + ';\nINSERT INTO Poets VALUES '.join( map( (lambda p: '(' +  
                                                  p.firstname  + ', ' +
                                                  p.middlename + ', ' + 
                                                  p.lastname   + ', ' + 
