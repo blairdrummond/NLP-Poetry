@@ -6,7 +6,7 @@ import os, re
 inpath  = 'corpus'
 outpath = 'database' 
 
-Regexnames  = re.compile('[a-zA-Z\.]+')
+regexnames  = re.compile('[a-zA-Z\.]+')
 regexbirth  = re.compile('((?=b\.)\d{3,4})|((?=\d{4}\-)\d{4})')
 regexdeathD = re.compile('(?=\-)\d{4}')
 regexcatego = re.compile("[\w\.'][\w\. &']*[\w\.']") # Note the space
