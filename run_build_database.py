@@ -236,7 +236,7 @@ Wcategories.write( 'INSERT INTO Categories VALUES ' + ';\nINSERT INTO Categories
 Wpoems.write( 'INSERT INTO Poems VALUES ' + ';\nINSERT INTO Poems VALUES '.join( map( (lambda p: '(' + 
                                                                          p[1].name             + ', ' + 
                                                                          p[0].firstname        + ', ' +
-                                                                         p[0].middlename        + ', ' +
+                                                                         p[0].middlename       + ', ' +
                                                                          p[0].lastname         + ', ' +
                                                                          p[1].region           + ', ' +
                                                                          p[1].subregion        + ', ' +
