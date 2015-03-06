@@ -11,7 +11,7 @@ http://artsites.uottawa.ca/margento/en/the-graph-poem/
 
 Dependencies:
 
-Java 8, Stanford-CoreNLP, python 3, nltk, zss, editdist
+Java 8, Stanford-CoreNLP, python 3, nltk, zss, editdist, tkinter for python
 
 ADD MORE DETAIL
 
