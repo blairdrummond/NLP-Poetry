@@ -24,12 +24,6 @@ from nltk.draw.tree import *
 # Linux
 directory = 'output/'
 
-def cleanLine(s):
-    l = s.find('(')     # left  bound bracket
-    r = s.rfind(')')+1  # right bound bracket
-    return s[l:r].replace('</>','(/)').replace('<//>','(//)')
-
-
 def grab_file(f):
     with open(os.path.join(directory, 'poem.'+ f + '.txt'), 'r') as fr:
         read  = fr.read().split('\n')  # Parse Tree of Poem
@@ -39,16 +33,24 @@ def grab_file(f):
     
 def grab_stanza(f,s):
     with open(os.path.join(directory, 'poem.'+ f + '.txt'), 'r') as fr:
-        read  = fr.read()  # Parse Tree of Poem
-    l = read.replace('<//>', 'ignore', s).find('<//>')
-    r = read.find('<//>', l+1)
-    if r == -1:
-        return []
-    read = read[l+4:r]
-    read = read.split('\n')
-    return read
+        read  = fr.read().split('\n')  # Parse Tree of Poem
 
+    i    = 0
+    line = 0
+    while i < s:
+        if i < s:
+            i = i + read[line].count('<//>')
+        line+=1
 
+    if i > s:
+        return [read[line]]
+
+    i = line
+    line+=1
+    while -1 == read[line].find('<//>'):
+        line+=1
+
+    return read[i:line+1]
 
 
 def test(parses):
@@ -79,10 +81,12 @@ if __name__ == "__main__":
         print 'Type your poem number, and (optionally) your stanza number to generate trees.'
         print '> python drawtree 123114 3'
     elif len(sys.argv) == 2:
-        todo = map(  cleanLine, grab_file(sys.argv[1])  )
+        todo = map((lambda s: s.rstrip('</EOS> ').replace('</>','(/)').replace('<//>','(//)')), grab_file(sys.argv[1])  )
         test(todo)
     else: 
-        todo = map(  cleanLine, grab_stanza(sys.argv[1], sys.argv[2])  ) 
+        todo = map((lambda s: s.rstrip('</EOS> ').replace('</>','(/)').replace('<//>','(//)')), grab_stanza(sys.argv[1], int(sys.argv[2]))  ) 
+        print grab_stanza(sys.argv[1], int(sys.argv[2]))
+        print todo
         test(todo)
 
 
