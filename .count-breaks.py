@@ -38,9 +38,10 @@ class Poem:
         for i in range(1,len(stanzas)):
             self.stanzas[i].closedbegin = self.stanzas[i-1].closedend        
         
+        
         self.num_sentences  = sum( [ x.sentence_ends for x in self.stanzas] )
         self.enjambed_lines = sum( [ x.enjambed      for x in self.stanzas] )
-
+        self.line_breaks    = sum( [ x.lines         for x in self.stanzas] )
 
         
 
