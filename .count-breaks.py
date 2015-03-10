@@ -46,10 +46,10 @@ class Poem:
 
     def __str__(self):
         self.stanza_agg_data()
-        s =('<Poem  NumStanzas="'    + str(self.stanza_breaks)  + 
-                '"  NumLines="'      + str(self.line_breaks)    + 
-                '"  NumSentences="'  + str(self.num_sentences)  +
-                '"  EnjambedLines="' + str(self.enjambed_lines) +
+        s =('<Poem  NumStanzas="'       + str(self.stanza_breaks)  + 
+                '"  NumLines="'         + str(self.line_breaks)    + 
+                '"  NumSentences="'     + str(self.num_sentences)  +
+                '"  NumEnjambedLines="' + str(self.enjambed_lines) +
             '">\n' +
             '    <Stanzas>\n'                                                           + 
             '        \n'.join( [str(stza) for stza in self.stanzas] )+'\n' + 
