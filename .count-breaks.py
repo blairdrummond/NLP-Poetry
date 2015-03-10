@@ -100,7 +100,7 @@ class Stanza:
 
             '        <Count  NumLines="'  + str(self.lines)                 + 
                      '"  NumSentences="'  + str(self.sentence_ends)         +
-                     '"  Enjambed="'      + str(self.enjambed)              +
+                     '"  NumEnjambed="'   + str(self.enjambed)              +
                      '"/>\n'                                                +
 
             '        <LineEndings>\n'   + '            '                    +
