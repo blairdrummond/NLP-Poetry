@@ -2,7 +2,7 @@
 
 # Blair bdrum047@uottawa.ca
 
-import os, re, sys
+import os, re, sys, copy
 
 directory = 'output/'
 
@@ -13,8 +13,145 @@ line_sibr = re.compile('(?<=</> )(?:.*?)([A-Z$]+)')
 stan_sibl = re.compile('[A-Z$]+(?= ((\(. .)|[^\(])+\)+  <//>)')
 stan_sibr = re.compile('(?<=<//> )(?:.*?)([A-Z$]+)')
 punct     = re.compile("""(?<=\([;:.,\?!-] )[;:.,\?!-](?=(\( ["'`]{1,2} ["'`]{1,2}\))?\)+  (<EOS> )?<//?>)""")
+splitlines= re.compile('(</>|<//>)')
+words     = re.compile("[a-zA-Z'0-9](?=\))")
 
 ################# Find subtree ######################
+
+class Poem:
+    def __init__(self, stanza_breaks, enjambed_stanzas):
+
+        self.stanza_breaks    = stanza_breaks
+        self.enjambed_stanzas = enjambed_stanzas
+        
+        self.line_breaks      = 0
+        self.num_sentences    = 0
+        self.enjambed_lines   = 0
+        self.stanzas          = []
+
+
+    def add_stanza(self,stanza):
+        self.stanzas.append(stanza)
+
+    def stanza_agg_data(self):
+        self.stanzas[0].closedbegin = True        
+        for i in range(1,len(stanzas)):
+            self.stanzas[i].closedbegin = self.stanzas[i-1].closedend        
+        
+        self.num_sentences  = sum( [ x.sentence_ends for x in self.stanzas] )
+        self.enjambed_lines = sum( [ x.enjambed      for x in self.stanzas] )
+
+
+        
+
+    def __str__(self):
+        self.stanza_agg_data()
+        s =('<Poem  NumStanzas="'    + str(self.stanza_breaks)  + 
+                '"  NumLines="'      + str(self.line_breaks)    + 
+                '"  NumSentences="'  + str(self.num_sentences)  +
+                '"  EnjambedLines="' + str(self.enjambed_lines) +
+            '">\n' +
+            '    <Stanzas>\n'                                                           + 
+            '        \n'.join( [str(stza) for stza in self.stanzas] )+'\n' + 
+            '    </Stanzas>\n'                                                          + 
+            '</Poem>')
+        return s
+
+def boolToStr(b):
+    if b:
+        return 'true'
+    else:
+        return 'false'
+
+class Stanza:
+    def __init__(self, number, stanza ):
+        self.number        = number
+        self.lines         = stanza.count('</>')
+        self.sentence_ends = stanza.count('<EOS>')
+        self.end_stops     = stanza.count('<EOS> </>')
+        self.text          = stanza
+        self.enjambed      = self.lines - self.end_stops
+        self.end           = None
+        self.linebreaks    = []
+
+        self.closedbegin   = False
+        self.closedend     = False
+        self.listoflines   = []
+
+    def endswith(self, t):
+        if t == None:
+            self.lines     += 1
+            self.end_stops += 1
+            self.closedend  = True
+        else:
+            self.lines     += 1
+            self.enjambed  += 1
+            self.end = t
+
+        
+
+    def __str__(self):
+        temp = copy.copy(self.linebreaks)
+        temp.append(self.end)
+        self.generate_lines(temp)
+        s =('    <Stanza number="' + str(self.number)                       +                       
+                  '" closedbegin="'+ boolToStr(self.closedbegin)            + 
+                  '" closedend="'  + boolToStr(self.closedend)+'">\n'       + 
+
+            '        <Count  NumLines="'  + str(self.lines)                 + 
+                     '"  NumSentences="'  + str(self.sentence_ends)         +
+                     '"  Enjambed="'      + str(self.enjambed)              +
+                     '"/>\n'                                                +
+
+            '        <LineEndings>\n'   + '            '                    +
+            '            '.join( [str(line) for line in self.listoflines] ) +
+            '        </LineEndings>\n' + 
+            '    </Stanza>')
+        return s
+
+    def generate_lines(self, breaks):
+        lines = splitlines.split(self.text)
+
+        self.listoflines = map( (lambda pair: Line(pair[0], pair[1])),
+                                 zip(breaks, [line for line in lines if line != '</>' ])) 
+        self.listoflines[-1].stanzabreak = True # the last line is a stanza break
+
+class Line:
+    def __init__(self, quad, tree_seg):
+        if quad == None:
+            self.nobreak      = True
+        else:
+            self.nobreak      = False
+            self.head         = quad[0]
+            self.left         = quad[1]
+            self.right        = quad[2]
+            self.punc         = quad[3]
+
+        self.stanzabreak  = False
+        self.length= len(words.findall(tree_seg))
+        self.sents = tree_seg.count('<EOS>')
+        
+
+    def __str__(self):
+        if self.stanzabreak:
+            lineend = 'LineEnd="//"'
+        else:
+            lineend = 'LineEnd="/"'
+
+        if not self.nobreak:
+            return '<Line length="'    + str(self.length)  + \
+                   '"  NumSentences="' + str(self.sents)   + \
+                   '"  '               + lineend           + \
+                   '>\n                <Linebreak'         + \
+                   '"  head="'         + self.head         + \
+                   '"  leftSibling="'  + self.left         + \
+                   '"  rightSibling="' + self.right        + \
+                   '"  punctuation="'  + self.punc         + \
+                   '"/>\n            </Line>\n' 
+        else:
+            return '<Line length="'    + str(self.length)  + \
+                   '"  NumSentences="' + str(self.sents)   + \
+                   '"  ' + lineend + '/>\n'
 
 # Little Auxiliary function
 # Takes a string and parses out the governing and adjacent tokens
@@ -29,13 +166,15 @@ def find_tokens(s,tag):
         sibl = stan_sibl
         sibr = stan_sibr
 
+    # find and label head-leftsibling-rightsibling
     htoken = head.search(s).group(0)
     ltoken = sibl.search(s).group(0)
     rtoken = sibr.search(s).group(1)
     punkt  = punct.search(s)
 
+    # if there is no punctuation, denote it with empty string
     if punkt == None:
-        return  ( htoken,  ltoken,  rtoken ) 
+        return  ( htoken,  ltoken,  rtoken, '' ) 
     else:
         return  ( htoken,  ltoken,  rtoken,  punkt.group(0) )
 
@@ -116,11 +255,12 @@ for file in os.listdir(directory):
         read  = open(os.path.join(directory,  file), 'r').read()
         
         # The search destroys read in the process, so grab this now
-        internal_stanzas = read.count(')  <//> (')
         total_stanzas    = read.count(   '<//>'  )
+        internal_stanzas = read.count(')  <//> (')
         stanza_breaks    = match_brackets(read,'<//>')
         line_breaks      = match_brackets(read,'</>')
 
+        thispoem = Poem(total_stanzas, internal_stanzas)
 
         stanzas = []
         # Do while loop
@@ -133,44 +273,31 @@ for file in os.listdir(directory):
                 read = split[2]                             # delete the processed part of the file
                 stanzas.append(split[0].lstrip() + '\n')    # Add new stanza to list
 
-        # Stanzas now is a list of every stanza 
-        # ends = [ ( #of'</>' , #of'<EOS>', #of'<EOS> </>')]   
-        ends   = []
-        for stanza in stanzas:
-            #print stanza
-            ends.append((stanza.count('</>'),    stanza.count('<EOS>'),    stanza.count('<EOS> </>')))
 
-        # Put the inline line breaks in the bin of their stanza number
+
+
+        # Stanzas now is a list of every stanza 
+        i = 0
+        for stanza in stanzas:
+            # Add stanza objects to poem
+            thispoem.add_stanza( Stanza(i, stanza) )
+            i += 1
+
+        # Put the inline line breaks in their stanza
         extracted_lines = line_breaks
         j = 0
         k = 0
         lines_per_stanza = []
-        for end in ends:
-            k = k+end[0]
-            lines_per_stanza.append(extracted_lines[j:k])
+        for stanza in thispoem.stanzas:
+            k = k + stanza.lines
+            stanza.linebreaks= extracted_lines[j:k]
             j = k
 
         # Attach stanza ends to lines_per_stanza
-        map( (lambda x,y: x.append(y)),  lines_per_stanza , stanza_breaks   )
+        map( (lambda x,y: x.endswith(y)),  thispoem.stanzas , stanza_breaks   )
 
-        for i in range(0, len(ends)):
-            if lines_per_stanza[i][-1] == None:
-                ends[i] = (ends[i][0] + 1 , ends[i][1], ends[i][2] + 1)
-            else:
-                ends[i] = (ends[i][0] + 1 , ends[i][1], ends[i][2])           
-
-             
-        # All Data gathered, do a little post-proccessing and write to file.
-        write_string = "total # of stanzas : "     + str(total_stanzas)    + '\n' + \
-                       "inline     stanzas : "+ str(internal_stanzas) + '\n' + \
-                       "break environments : ( HEAD, LEFT, RIGHT, Punctuation ) \n\n"     + \
-                       str(stanza_breaks) + '\n\nstanzas #\n ( # of </> , # of End , # of End </>, Punctuation )\n[ List of linebreak environments ]\n\n' 
-
-        # append this new information, once per stanza
-        for i in range(0, len(ends)):
-            write_string += 'stanza ' + str(i) + '\n' + str(ends[i]) + '\n' + str(lines_per_stanza[i]) + '\n\n'
 
         write = open(os.path.join(directory, file), 'a') 
-        write.write('\n\n\n\n\n' + write_string)
+        write.write('\n\n\n\n\n' + str(thispoem))
         write.close()
 print

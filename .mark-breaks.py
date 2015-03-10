@@ -147,6 +147,7 @@ for file in os.listdir(poems):        # iterate through every poem file in input
                 else: # Failed regex  # If failures occur, this
                     print file        # block helps to highlight
                     print regex       # the problem.
+                    print
                     i=i+1             #
 
             elif not first:

@@ -5,7 +5,7 @@
 
 import os, sys, re
 
-fix = re.compile('(?<=\n)[^a-zA-Z\n]+(?=\n)')
+fix = re.compile('(?<=\n)[0-9IVX* ]+(?=\n)')
 
 inpath  = sys.argv[1] + '/'                                   # input folder
 outpath = os.getcwd() + "/.temp/"                             # folder for temporary files
@@ -15,7 +15,7 @@ for file in os.listdir(inpath):                               # iterate through 
     if file.endswith(".txt"):
         f.write(outpath + file + '\n')                        # Add poem to index
         with open(os.path.join(inpath,  file), 'r') as fi:
-            read = '\n'.join(fi.readlines()[11:])               # Open Input
+            read = ''.join(fi.readlines()[9:])               # Open Input
         
         # NOT TESTED YET
         text = fix.sub('\n' , read)
