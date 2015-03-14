@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>A</word>
+            <lemma>a</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>1</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>A</TrueCaseText>
+          </token>
+          <token id="2">
+            <word>white</word>
+            <lemma>white</lemma>
+            <CharacterOffsetBegin>2</CharacterOffsetBegin>
+            <CharacterOffsetEnd>7</CharacterOffsetEnd>
+            <POS>JJ</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>INIT_UPPER</TrueCase>
+            <TrueCaseText>White</TrueCaseText>
+          </token>
+          <token id="3">
+            <word>hunter</word>
+            <lemma>hunter</lemma>
+            <CharacterOffsetBegin>8</CharacterOffsetBegin>
+            <CharacterOffsetEnd>14</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>INIT_UPPER</TrueCase>
+            <TrueCaseText>Hunter</TrueCaseText>
+          </token>
+          <token id="4">
+            <word>is</word>
+            <lemma>be</lemma>
+            <CharacterOffsetBegin>15</CharacterOffsetBegin>
+            <CharacterOffsetEnd>17</CharacterOffsetEnd>
+            <POS>VBZ</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>is</TrueCaseText>
+          </token>
+          <token id="5">
+            <word>nearly</word>
+            <lemma>nearly</lemma>
+            <CharacterOffsetBegin>18</CharacterOffsetBegin>
+            <CharacterOffsetEnd>24</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>nearly</TrueCaseText>
+          </token>
+          <token id="6">
+            <word>crazy</word>
+            <lemma>crazy</lemma>
+            <CharacterOffsetBegin>25</CharacterOffsetBegin>
+            <CharacterOffsetEnd>30</CharacterOffsetEnd>
+            <POS>JJ</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>crazy</TrueCaseText>
+          </token>
+          <token id="7">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>30</CharacterOffsetBegin>
+            <CharacterOffsetEnd>31</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>.</TrueCaseText>
+          </token>
+        </tokens>
+        <parse>(ROOT (S (NP (DT A) (JJ white) (NN hunter)) (VP (VBZ is) (ADJP (RB nearly) (JJ crazy))) (. .))) </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">crazy</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">hunter</governor>
+            <dependent idx="1">A</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="3">hunter</governor>
+            <dependent idx="2">white</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">crazy</governor>
+            <dependent idx="3">hunter</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="6">crazy</governor>
+            <dependent idx="4">is</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="6">crazy</governor>
+            <dependent idx="5">nearly</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">crazy</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">hunter</governor>
+            <dependent idx="1">A</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="3">hunter</governor>
+            <dependent idx="2">white</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">crazy</governor>
+            <dependent idx="3">hunter</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="6">crazy</governor>
+            <dependent idx="4">is</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="6">crazy</governor>
+            <dependent idx="5">nearly</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="6">crazy</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">hunter</governor>
+            <dependent idx="1">A</dependent>
+          </dep>
+          <dep type="amod">
+            <governor idx="3">hunter</governor>
+            <dependent idx="2">white</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="6">crazy</governor>
+            <dependent idx="3">hunter</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="6">crazy</governor>
+            <dependent idx="4">is</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="6">crazy</governor>
+            <dependent idx="5">nearly</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

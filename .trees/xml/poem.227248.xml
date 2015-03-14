@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>Thicker</word>
+            <lemma>thicker</lemma>
+            <CharacterOffsetBegin>1</CharacterOffsetBegin>
+            <CharacterOffsetEnd>8</CharacterOffsetEnd>
+            <POS>JJR</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>INIT_UPPER</TrueCase>
+            <TrueCaseText>Thicker</TrueCaseText>
+          </token>
+          <token id="2">
+            <word>than</word>
+            <lemma>than</lemma>
+            <CharacterOffsetBegin>9</CharacterOffsetBegin>
+            <CharacterOffsetEnd>13</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>than</TrueCaseText>
+          </token>
+          <token id="3">
+            <word>rain-drops</word>
+            <lemma>rain-drop</lemma>
+            <CharacterOffsetBegin>14</CharacterOffsetBegin>
+            <CharacterOffsetEnd>24</CharacterOffsetEnd>
+            <POS>NNS</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>rain-drops</TrueCaseText>
+          </token>
+          <token id="4">
+            <word>on</word>
+            <lemma>on</lemma>
+            <CharacterOffsetBegin>25</CharacterOffsetBegin>
+            <CharacterOffsetEnd>27</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>on</TrueCaseText>
+          </token>
+          <token id="5">
+            <word>November</word>
+            <lemma>November</lemma>
+            <CharacterOffsetBegin>28</CharacterOffsetBegin>
+            <CharacterOffsetEnd>36</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>DATE</NER>
+            <NormalizedNER>XXXX-11</NormalizedNER>
+            <Speaker>PER0</Speaker>
+            <Timex tid="t1" type="DATE">XXXX-11</Timex>
+            <TrueCase>INIT_UPPER</TrueCase>
+            <TrueCaseText>November</TrueCaseText>
+          </token>
+          <token id="6">
+            <word>thorn</word>
+            <lemma>thorn</lemma>
+            <CharacterOffsetBegin>37</CharacterOffsetBegin>
+            <CharacterOffsetEnd>42</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>INIT_UPPER</TrueCase>
+            <TrueCaseText>Thorn</TrueCaseText>
+          </token>
+          <token id="7">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>42</CharacterOffsetBegin>
+            <CharacterOffsetEnd>43</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>.</TrueCaseText>
+          </token>
+        </tokens>
+        <parse>(ROOT (NP (NP (JJR Thicker)) (PP (IN than) (NP (NNS rain-drops))) (PP (IN on) (NP (NNP November) (NN thorn))) (. .))) </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Thicker</dependent>
+          </dep>
+          <dep type="prep">
+            <governor idx="1">Thicker</governor>
+            <dependent idx="2">than</dependent>
+          </dep>
+          <dep type="pobj">
+            <governor idx="2">than</governor>
+            <dependent idx="3">rain-drops</dependent>
+          </dep>
+          <dep type="prep">
+            <governor idx="1">Thicker</governor>
+            <dependent idx="4">on</dependent>
+          </dep>
+          <dep type="nn">
+            <governor idx="6">thorn</governor>
+            <dependent idx="5">November</dependent>
+          </dep>
+          <dep type="pobj">
+            <governor idx="4">on</governor>
+            <dependent idx="6">thorn</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Thicker</dependent>
+          </dep>
+          <dep type="prep_than">
+            <governor idx="1">Thicker</governor>
+            <dependent idx="3">rain-drops</dependent>
+          </dep>
+          <dep type="nn">
+            <governor idx="6">thorn</governor>
+            <dependent idx="5">November</dependent>
+          </dep>
+          <dep type="prep_on">
+            <governor idx="1">Thicker</governor>
+            <dependent idx="6">thorn</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">Thicker</dependent>
+          </dep>
+          <dep type="prep_than">
+            <governor idx="1">Thicker</governor>
+            <dependent idx="3">rain-drops</dependent>
+          </dep>
+          <dep type="nn">
+            <governor idx="6">thorn</governor>
+            <dependent idx="5">November</dependent>
+          </dep>
+          <dep type="prep_on">
+            <governor idx="1">Thicker</governor>
+            <dependent idx="6">thorn</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

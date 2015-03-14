@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>On</word>
+            <lemma>on</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>2</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>On</TrueCaseText>
+          </token>
+          <token id="2">
+            <word>a</word>
+            <lemma>a</lemma>
+            <CharacterOffsetBegin>3</CharacterOffsetBegin>
+            <CharacterOffsetEnd>4</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>UPPER</TrueCase>
+            <TrueCaseText>A</TrueCaseText>
+          </token>
+          <token id="3">
+            <word>branch</word>
+            <lemma>branch</lemma>
+            <CharacterOffsetBegin>5</CharacterOffsetBegin>
+            <CharacterOffsetEnd>11</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>branch</TrueCaseText>
+          </token>
+          <token id="4">
+            <word>floating</word>
+            <lemma>float</lemma>
+            <CharacterOffsetBegin>13</CharacterOffsetBegin>
+            <CharacterOffsetEnd>21</CharacterOffsetEnd>
+            <POS>VBG</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>floating</TrueCaseText>
+          </token>
+          <token id="5">
+            <word>downriver</word>
+            <lemma>downriver</lemma>
+            <CharacterOffsetBegin>22</CharacterOffsetBegin>
+            <CharacterOffsetEnd>31</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>downriver</TrueCaseText>
+          </token>
+          <token id="6">
+            <word>a</word>
+            <lemma>a</lemma>
+            <CharacterOffsetBegin>33</CharacterOffsetBegin>
+            <CharacterOffsetEnd>34</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>a</TrueCaseText>
+          </token>
+          <token id="7">
+            <word>cricket</word>
+            <lemma>cricket</lemma>
+            <CharacterOffsetBegin>35</CharacterOffsetBegin>
+            <CharacterOffsetEnd>42</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>cricket</TrueCaseText>
+          </token>
+          <token id="8">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>42</CharacterOffsetBegin>
+            <CharacterOffsetEnd>43</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>,</TrueCaseText>
+          </token>
+          <token id="9">
+            <word>singing</word>
+            <lemma>singing</lemma>
+            <CharacterOffsetBegin>44</CharacterOffsetBegin>
+            <CharacterOffsetEnd>51</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>singing</TrueCaseText>
+          </token>
+          <token id="10">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>51</CharacterOffsetBegin>
+            <CharacterOffsetEnd>52</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>.</TrueCaseText>
+          </token>
+        </tokens>
+        <parse>(ROOT (FRAG (PP (IN On) (NP (NP (DT a) (NN branch)) (VP (VBG floating) (ADVP (RB downriver)) (NP (NP (DT a) (NN cricket)) (, ,) (NP (NN singing)))))) (. .))) </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">On</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">branch</governor>
+            <dependent idx="2">a</dependent>
+          </dep>
+          <dep type="pobj">
+            <governor idx="1">On</governor>
+            <dependent idx="3">branch</dependent>
+          </dep>
+          <dep type="vmod">
+            <governor idx="3">branch</governor>
+            <dependent idx="4">floating</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">floating</governor>
+            <dependent idx="5">downriver</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">cricket</governor>
+            <dependent idx="6">a</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="4">floating</governor>
+            <dependent idx="7">cricket</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="7">cricket</governor>
+            <dependent idx="9">singing</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">On</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">branch</governor>
+            <dependent idx="2">a</dependent>
+          </dep>
+          <dep type="pobj">
+            <governor idx="1">On</governor>
+            <dependent idx="3">branch</dependent>
+          </dep>
+          <dep type="vmod">
+            <governor idx="3">branch</governor>
+            <dependent idx="4">floating</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">floating</governor>
+            <dependent idx="5">downriver</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">cricket</governor>
+            <dependent idx="6">a</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="4">floating</governor>
+            <dependent idx="7">cricket</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="7">cricket</governor>
+            <dependent idx="9">singing</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="1">On</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="3">branch</governor>
+            <dependent idx="2">a</dependent>
+          </dep>
+          <dep type="pobj">
+            <governor idx="1">On</governor>
+            <dependent idx="3">branch</dependent>
+          </dep>
+          <dep type="vmod">
+            <governor idx="3">branch</governor>
+            <dependent idx="4">floating</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="4">floating</governor>
+            <dependent idx="5">downriver</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">cricket</governor>
+            <dependent idx="6">a</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="4">floating</governor>
+            <dependent idx="7">cricket</dependent>
+          </dep>
+          <dep type="appos">
+            <governor idx="7">cricket</governor>
+            <dependent idx="9">singing</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

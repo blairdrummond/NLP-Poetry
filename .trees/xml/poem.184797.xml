@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>Even</word>
+            <lemma>even</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>4</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>Even</TrueCaseText>
+          </token>
+          <token id="2">
+            <word>with</word>
+            <lemma>with</lemma>
+            <CharacterOffsetBegin>5</CharacterOffsetBegin>
+            <CharacterOffsetEnd>9</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>with</TrueCaseText>
+          </token>
+          <token id="3">
+            <word>insects</word>
+            <lemma>insect</lemma>
+            <CharacterOffsetBegin>10</CharacterOffsetBegin>
+            <CharacterOffsetEnd>17</CharacterOffsetEnd>
+            <POS>NNS</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>insects</TrueCaseText>
+          </token>
+          <token id="4">
+            <word>--</word>
+            <lemma>--</lemma>
+            <CharacterOffsetBegin>17</CharacterOffsetBegin>
+            <CharacterOffsetEnd>19</CharacterOffsetEnd>
+            <POS>:</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>--</TrueCaseText>
+          </token>
+          <token id="5">
+            <word>some</word>
+            <lemma>some</lemma>
+            <CharacterOffsetBegin>21</CharacterOffsetBegin>
+            <CharacterOffsetEnd>25</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>INIT_UPPER</TrueCase>
+            <TrueCaseText>Some</TrueCaseText>
+          </token>
+          <token id="6">
+            <word>can</word>
+            <lemma>can</lemma>
+            <CharacterOffsetBegin>26</CharacterOffsetBegin>
+            <CharacterOffsetEnd>29</CharacterOffsetEnd>
+            <POS>MD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>can</TrueCaseText>
+          </token>
+          <token id="7">
+            <word>sing</word>
+            <lemma>sing</lemma>
+            <CharacterOffsetBegin>30</CharacterOffsetBegin>
+            <CharacterOffsetEnd>34</CharacterOffsetEnd>
+            <POS>VB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>sing</TrueCaseText>
+          </token>
+          <token id="8">
+            <word>,</word>
+            <lemma>,</lemma>
+            <CharacterOffsetBegin>34</CharacterOffsetBegin>
+            <CharacterOffsetEnd>35</CharacterOffsetEnd>
+            <POS>,</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>,</TrueCaseText>
+          </token>
+          <token id="9">
+            <word>some</word>
+            <lemma>some</lemma>
+            <CharacterOffsetBegin>41</CharacterOffsetBegin>
+            <CharacterOffsetEnd>45</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>some</TrueCaseText>
+          </token>
+          <token id="10">
+            <word>ca</word>
+            <lemma>can</lemma>
+            <CharacterOffsetBegin>46</CharacterOffsetBegin>
+            <CharacterOffsetEnd>48</CharacterOffsetEnd>
+            <POS>MD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>ca</TrueCaseText>
+          </token>
+          <token id="11">
+            <word>n't</word>
+            <lemma>not</lemma>
+            <CharacterOffsetBegin>48</CharacterOffsetBegin>
+            <CharacterOffsetEnd>51</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>n't</TrueCaseText>
+          </token>
+          <token id="12">
+            <word>.</word>
+            <lemma>.</lemma>
+            <CharacterOffsetBegin>51</CharacterOffsetBegin>
+            <CharacterOffsetEnd>52</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>.</TrueCaseText>
+          </token>
+        </tokens>
+        <parse>(ROOT (S (SBAR (RB Even) (IN with) (S (NP (NP (NNS insects)) (: --) (NP (DT some))) (VP (MD can) (VP (VB sing))))) (, ,) (NP (DT some)) (VP (MD ca) (RB n't)) (. .))) </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="10">ca</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="7">sing</governor>
+            <dependent idx="1">Even</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="7">sing</governor>
+            <dependent idx="2">with</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="7">sing</governor>
+            <dependent idx="3">insects</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">insects</governor>
+            <dependent idx="5">some</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="7">sing</governor>
+            <dependent idx="6">can</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="10">ca</governor>
+            <dependent idx="7">sing</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="10">ca</governor>
+            <dependent idx="9">some</dependent>
+          </dep>
+          <dep type="neg">
+            <governor idx="10">ca</governor>
+            <dependent idx="11">n't</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="10">ca</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="7">sing</governor>
+            <dependent idx="1">Even</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="7">sing</governor>
+            <dependent idx="2">with</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="7">sing</governor>
+            <dependent idx="3">insects</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">insects</governor>
+            <dependent idx="5">some</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="7">sing</governor>
+            <dependent idx="6">can</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="10">ca</governor>
+            <dependent idx="7">sing</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="10">ca</governor>
+            <dependent idx="9">some</dependent>
+          </dep>
+          <dep type="neg">
+            <governor idx="10">ca</governor>
+            <dependent idx="11">n't</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="10">ca</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="7">sing</governor>
+            <dependent idx="1">Even</dependent>
+          </dep>
+          <dep type="mark">
+            <governor idx="7">sing</governor>
+            <dependent idx="2">with</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="7">sing</governor>
+            <dependent idx="3">insects</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="3">insects</governor>
+            <dependent idx="5">some</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="7">sing</governor>
+            <dependent idx="6">can</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="10">ca</governor>
+            <dependent idx="7">sing</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="10">ca</governor>
+            <dependent idx="9">some</dependent>
+          </dep>
+          <dep type="neg">
+            <governor idx="10">ca</governor>
+            <dependent idx="11">n't</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+  </document>
+</root>

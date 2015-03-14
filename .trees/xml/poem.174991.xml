@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+  <document>
+    <sentences>
+      <sentence id="1">
+        <tokens>
+          <token id="1">
+            <word>Surgeons</word>
+            <lemma>surgeon</lemma>
+            <CharacterOffsetBegin>0</CharacterOffsetBegin>
+            <CharacterOffsetEnd>8</CharacterOffsetEnd>
+            <POS>NNS</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>Surgeons</TrueCaseText>
+          </token>
+          <token id="2">
+            <word>must</word>
+            <lemma>must</lemma>
+            <CharacterOffsetBegin>9</CharacterOffsetBegin>
+            <CharacterOffsetEnd>13</CharacterOffsetEnd>
+            <POS>MD</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>must</TrueCaseText>
+          </token>
+          <token id="3">
+            <word>be</word>
+            <lemma>be</lemma>
+            <CharacterOffsetBegin>14</CharacterOffsetBegin>
+            <CharacterOffsetEnd>16</CharacterOffsetEnd>
+            <POS>VB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>be</TrueCaseText>
+          </token>
+          <token id="4">
+            <word>very</word>
+            <lemma>very</lemma>
+            <CharacterOffsetBegin>17</CharacterOffsetBegin>
+            <CharacterOffsetEnd>21</CharacterOffsetEnd>
+            <POS>RB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>very</TrueCaseText>
+          </token>
+          <token id="5">
+            <word>careful</word>
+            <lemma>careful</lemma>
+            <CharacterOffsetBegin>22</CharacterOffsetBegin>
+            <CharacterOffsetEnd>29</CharacterOffsetEnd>
+            <POS>JJ</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>careful</TrueCaseText>
+          </token>
+          <token id="6">
+            <word>When</word>
+            <lemma>when</lemma>
+            <CharacterOffsetBegin>31</CharacterOffsetBegin>
+            <CharacterOffsetEnd>35</CharacterOffsetEnd>
+            <POS>WRB</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>when</TrueCaseText>
+          </token>
+          <token id="7">
+            <word>they</word>
+            <lemma>they</lemma>
+            <CharacterOffsetBegin>36</CharacterOffsetBegin>
+            <CharacterOffsetEnd>40</CharacterOffsetEnd>
+            <POS>PRP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>they</TrueCaseText>
+          </token>
+          <token id="8">
+            <word>take</word>
+            <lemma>take</lemma>
+            <CharacterOffsetBegin>41</CharacterOffsetBegin>
+            <CharacterOffsetEnd>45</CharacterOffsetEnd>
+            <POS>VBP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>take</TrueCaseText>
+          </token>
+          <token id="9">
+            <word>the</word>
+            <lemma>the</lemma>
+            <CharacterOffsetBegin>46</CharacterOffsetBegin>
+            <CharacterOffsetEnd>49</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>the</TrueCaseText>
+          </token>
+          <token id="10">
+            <word>knife</word>
+            <lemma>knife</lemma>
+            <CharacterOffsetBegin>50</CharacterOffsetBegin>
+            <CharacterOffsetEnd>55</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>knife</TrueCaseText>
+          </token>
+          <token id="11">
+            <word>!</word>
+            <lemma>!</lemma>
+            <CharacterOffsetBegin>55</CharacterOffsetBegin>
+            <CharacterOffsetEnd>56</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>!</TrueCaseText>
+          </token>
+        </tokens>
+        <parse>(ROOT (S (NP (NNS Surgeons)) (VP (MD must) (VP (VB be) (ADJP (RB very) (JJ careful)) (SBAR (WHADVP (WRB When)) (S (NP (PRP they)) (VP (VBP take) (NP (DT the) (NN knife))))))) (. !))) </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="5">careful</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">careful</governor>
+            <dependent idx="1">Surgeons</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="5">careful</governor>
+            <dependent idx="2">must</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="5">careful</governor>
+            <dependent idx="3">be</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="5">careful</governor>
+            <dependent idx="4">very</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">take</governor>
+            <dependent idx="6">When</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="8">take</governor>
+            <dependent idx="7">they</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="5">careful</governor>
+            <dependent idx="8">take</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="10">knife</governor>
+            <dependent idx="9">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="8">take</governor>
+            <dependent idx="10">knife</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="5">careful</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">careful</governor>
+            <dependent idx="1">Surgeons</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="5">careful</governor>
+            <dependent idx="2">must</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="5">careful</governor>
+            <dependent idx="3">be</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="5">careful</governor>
+            <dependent idx="4">very</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">take</governor>
+            <dependent idx="6">When</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="8">take</governor>
+            <dependent idx="7">they</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="5">careful</governor>
+            <dependent idx="8">take</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="10">knife</governor>
+            <dependent idx="9">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="8">take</governor>
+            <dependent idx="10">knife</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="5">careful</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">careful</governor>
+            <dependent idx="1">Surgeons</dependent>
+          </dep>
+          <dep type="aux">
+            <governor idx="5">careful</governor>
+            <dependent idx="2">must</dependent>
+          </dep>
+          <dep type="cop">
+            <governor idx="5">careful</governor>
+            <dependent idx="3">be</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="5">careful</governor>
+            <dependent idx="4">very</dependent>
+          </dep>
+          <dep type="advmod">
+            <governor idx="8">take</governor>
+            <dependent idx="6">When</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="8">take</governor>
+            <dependent idx="7">they</dependent>
+          </dep>
+          <dep type="advcl">
+            <governor idx="5">careful</governor>
+            <dependent idx="8">take</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="10">knife</governor>
+            <dependent idx="9">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="8">take</governor>
+            <dependent idx="10">knife</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+      <sentence id="2">
+        <tokens>
+          <token id="1">
+            <word>Underneath</word>
+            <lemma>underneath</lemma>
+            <CharacterOffsetBegin>58</CharacterOffsetBegin>
+            <CharacterOffsetEnd>68</CharacterOffsetEnd>
+            <POS>IN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>underneath</TrueCaseText>
+          </token>
+          <token id="2">
+            <word>their</word>
+            <lemma>they</lemma>
+            <CharacterOffsetBegin>69</CharacterOffsetBegin>
+            <CharacterOffsetEnd>74</CharacterOffsetEnd>
+            <POS>PRP$</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>their</TrueCaseText>
+          </token>
+          <token id="3">
+            <word>fine</word>
+            <lemma>fine</lemma>
+            <CharacterOffsetBegin>75</CharacterOffsetBegin>
+            <CharacterOffsetEnd>79</CharacterOffsetEnd>
+            <POS>JJ</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>fine</TrueCaseText>
+          </token>
+          <token id="4">
+            <word>incisions</word>
+            <lemma>incision</lemma>
+            <CharacterOffsetBegin>80</CharacterOffsetBegin>
+            <CharacterOffsetEnd>89</CharacterOffsetEnd>
+            <POS>NNS</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>incisions</TrueCaseText>
+          </token>
+          <token id="5">
+            <word>Stirs</word>
+            <lemma>stir</lemma>
+            <CharacterOffsetBegin>91</CharacterOffsetBegin>
+            <CharacterOffsetEnd>96</CharacterOffsetEnd>
+            <POS>VBZ</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>stirs</TrueCaseText>
+          </token>
+          <token id="6">
+            <word>the</word>
+            <lemma>the</lemma>
+            <CharacterOffsetBegin>97</CharacterOffsetBegin>
+            <CharacterOffsetEnd>100</CharacterOffsetEnd>
+            <POS>DT</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>LOWER</TrueCase>
+            <TrueCaseText>the</TrueCaseText>
+          </token>
+          <token id="7">
+            <word>Culprit</word>
+            <lemma>culprit</lemma>
+            <CharacterOffsetBegin>101</CharacterOffsetBegin>
+            <CharacterOffsetEnd>108</CharacterOffsetEnd>
+            <POS>NN</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>UPPER</TrueCase>
+            <TrueCaseText>CULPRIT</TrueCaseText>
+          </token>
+          <token id="8">
+            <word>-</word>
+            <lemma>-</lemma>
+            <CharacterOffsetBegin>109</CharacterOffsetBegin>
+            <CharacterOffsetEnd>110</CharacterOffsetEnd>
+            <POS>:</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>-</TrueCaseText>
+          </token>
+          <token id="9">
+            <word>Life</word>
+            <lemma>Life</lemma>
+            <CharacterOffsetBegin>111</CharacterOffsetBegin>
+            <CharacterOffsetEnd>115</CharacterOffsetEnd>
+            <POS>NNP</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>Life</TrueCaseText>
+          </token>
+          <token id="10">
+            <word>!</word>
+            <lemma>!</lemma>
+            <CharacterOffsetBegin>115</CharacterOffsetBegin>
+            <CharacterOffsetEnd>116</CharacterOffsetEnd>
+            <POS>.</POS>
+            <NER>O</NER>
+            <Speaker>PER0</Speaker>
+            <TrueCase>O</TrueCase>
+            <TrueCaseText>!</TrueCaseText>
+          </token>
+        </tokens>
+        <parse>(ROOT (S (PP (IN Underneath) (NP (PRP$ their) (JJ fine))) (NP (NNS incisions)) (VP (VBZ Stirs) (NP (NP (DT the) (NN Culprit)) (: -) (NP (NNP Life)))) (. !))) </parse>
+        <dependencies type="basic-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="5">Stirs</dependent>
+          </dep>
+          <dep type="prep">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="1">Underneath</dependent>
+          </dep>
+          <dep type="poss">
+            <governor idx="3">fine</governor>
+            <dependent idx="2">their</dependent>
+          </dep>
+          <dep type="pobj">
+            <governor idx="1">Underneath</governor>
+            <dependent idx="3">fine</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="4">incisions</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">Culprit</governor>
+            <dependent idx="6">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="7">Culprit</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="7">Culprit</governor>
+            <dependent idx="9">Life</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="5">Stirs</dependent>
+          </dep>
+          <dep type="poss">
+            <governor idx="3">fine</governor>
+            <dependent idx="2">their</dependent>
+          </dep>
+          <dep type="prep_underneath">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="3">fine</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="4">incisions</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">Culprit</governor>
+            <dependent idx="6">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="7">Culprit</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="7">Culprit</governor>
+            <dependent idx="9">Life</dependent>
+          </dep>
+        </dependencies>
+        <dependencies type="collapsed-ccprocessed-dependencies">
+          <dep type="root">
+            <governor idx="0">ROOT</governor>
+            <dependent idx="5">Stirs</dependent>
+          </dep>
+          <dep type="poss">
+            <governor idx="3">fine</governor>
+            <dependent idx="2">their</dependent>
+          </dep>
+          <dep type="prep_underneath">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="3">fine</dependent>
+          </dep>
+          <dep type="nsubj">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="4">incisions</dependent>
+          </dep>
+          <dep type="det">
+            <governor idx="7">Culprit</governor>
+            <dependent idx="6">the</dependent>
+          </dep>
+          <dep type="dobj">
+            <governor idx="5">Stirs</governor>
+            <dependent idx="7">Culprit</dependent>
+          </dep>
+          <dep type="dep">
+            <governor idx="7">Culprit</governor>
+            <dependent idx="9">Life</dependent>
+          </dep>
+        </dependencies>
+      </sentence>
+    </sentences>
+    <coreference>
+      <coreference>
+        <mention representative="true">
+          <sentence>1</sentence>
+          <start>1</start>
+          <end>2</end>
+          <head>1</head>
+          <text>Surgeons</text>
+        </mention>
+        <mention>
+          <sentence>1</sentence>
+          <start>7</start>
+          <end>8</end>
+          <head>7</head>
+          <text>they</text>
+        </mention>
+        <mention>
+          <sentence>2</sentence>
+          <start>2</start>
+          <end>3</end>
+          <head>2</head>
+          <text>their</text>
+        </mention>
+      </coreference>
+    </coreference>
+  </document>
+</root>
