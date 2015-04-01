@@ -9,9 +9,11 @@ http://artsites.uottawa.ca/margento/en/the-graph-poem/
 
 ************
 
+NOTE! There may be compatibility problems between python 2 and 3. I use 'map' a lot, but in python 2 this returns a list, and in python 3 it returns an iterator. Wrapping the function in list(...) fixes the problem. I will probably update the code to python 3 in the near future.
+
 Dependencies:
 
-Java 8, Stanford-CoreNLP, python 3, nltk, zss, editdist, tkinter for python
+Java 8, Stanford-CoreNLP, python, nltk, zss, editdist, tkinter for python
 
 ADD MORE DETAIL
 
