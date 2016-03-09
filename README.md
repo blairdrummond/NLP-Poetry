@@ -7,36 +7,26 @@ It is also a component of a larger project funded by a SSHRC (Social Sciences an
 Home Website:
 http://artsites.uottawa.ca/margento/en/the-graph-poem/
 
-************
+## BUGS
 
-NOTE! There may be compatibility problems between python 2 and 3. I use 'map' a lot, but in python 2 this returns a list, and in python 3 it returns an iterator. Wrapping the function in list(...) fixes the problem. I will probably update the code to python 3 in the near future.
+### Comaptibility Issues
+There may be compatibility problems between python 2 and 3. I've started edits to this, but I need to test the code to verify that these issues have been resolved.
 
-Dependencies:
+### Java hasn't been tested
+This was written in an old version of the stanford corenlp project (2014). Should test to see if the newest version is still compatible. In fact, I have to redesign the directory system somewhat to accomodate new software versions going into the future (That shouldn't actually be too hard though).
+
+## Dependencies:
 
 Java 8, Stanford-CoreNLP, python, nltk, zss, editdist, tkinter for python
 
-ADD MORE DETAIL
+**MAY NOT BE COMPREHENSIVE!**
 
-************
 
-Important Note:
+## Links:
 
-the stanford core folder is missing the models.jar file, which is too large for github.
-
-************
-
-See:
-
-TODO.txt for more on the list of priorities.
-
-************
-
-Links:
-
-Stanford CoreNLP                 --> http://nlp.stanford.edu/software/corenlp.shtml
-
-Natural Language Tool Kit (nltk) --> http://www.nltk.org/
-
-editdist (Levenshtein in Python) --> http://www.mindrot.org/projects/py-editdist/
-
-Zhang-Shasha tree distance       --> https://github.com/timtadh/zhang-shasha
+|                            |                                                 |
+|----------------------------+-------------------------------------------------|
+|  Stanford CoreNLP          | http://nlp.stanford.edu/software/corenlp.shtml  |
+| Natural Language Tool Kit  | http://www.nltk.org/                            |
+| editdist                   | http://www.mindrot.org/projects/py-editdist/    |
+| Zhang-Shasha tree distance | https://github.com/timtadh/zhang-shasha         |
