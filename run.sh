@@ -11,7 +11,7 @@
 #
 # Blair bdrum047@uottawa.ca
 #
-# WARNING: I used regex and I don't really know regex. The code SHOULD allow you to update jar versions in the 
+# WARNING: I used regex and I don't really know regex. The code SHOULD allow you to update jar versions in the
 # stanford-core folder without out-dating this script, but if something goes awry they should be investigated.
 #
 # place="$(pwd)"
@@ -22,7 +22,7 @@
 
 # It sets these in /.temp/, and it also lists all the poem names in a hidden .PoemList.txt file for the java system
 
-# Then the script copies a settings file out of the CORE-NLP folder into the /.trees/xml/ bin for .xml output. 
+# Then the script copies a settings file out of the CORE-NLP folder into the /.trees/xml/ bin for .xml output.
 
 # then the system switches directories and loads the java system with all the files. Annotated poems go to /.trees/
 
@@ -38,7 +38,7 @@
 
 # .count-breaks.py then tabulates the statistics of the line-breaks.
 
-# finally the system flushes all temporary folders. TODO 
+# finally the system flushes all temporary folders. TODO
 
 OS=`uname`
 # Macs (BSD) don't support readlink -e
@@ -86,9 +86,9 @@ mkdir .trees/xml/
 
 
 #Run a few things in the current directory to prepare, then switch to the CORE-NLP folder
-python .remove-tags.py "$input"
+python ./scripts/remove-tags.py "$input"
 #convert unicode to ascii
-sh ./.unicode-to-ascii.sh .temp/
+sh ./scripts/unicode-to-ascii.sh .temp/
 
 
 # Copy a file from stanford to output, then enter that directory
@@ -117,10 +117,10 @@ echo "Finished building parse trees."
 
 cd ../
 
-python .xml-to-penn.py
+python ./scripts/xml-to-penn.py
 mv .trees/*.xml .trees/xml/
-sh ./.unicode-to-ascii.sh .trees/
+sh ./scripts/unicode-to-ascii.sh .trees/
 
-python .mark-breaks.py
-python .EOS-tags.py
-python .count-breaks.py
+python ./scripts/mark-breaks.py
+python ./scripts/EOS-tags.py
+python ./scripts/count-breaks.py

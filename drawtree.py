@@ -19,8 +19,6 @@ from nltk.draw.tree import *
 
 
 
-
-
 # Windows? (not tested)
 #directory = r'\output'
 
