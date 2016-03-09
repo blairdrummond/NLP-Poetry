@@ -18,6 +18,9 @@ from nltk.draw.util import (CanvasFrame, CanvasWidget, BoxWidget,
 from nltk.draw.tree import *
 
 
+
+
+
 # Windows? (not tested)
 #directory = r'\output'
 
@@ -30,7 +33,7 @@ def grab_file(f):
     end = read.index('')
     return read[:end]
 
-    
+
 def grab_stanza(f,s):
     with open(os.path.join(directory, 'poem.'+ f + '.txt'), 'r') as fr:
         read  = fr.read().split('\n')  # Parse Tree of Poem
@@ -80,13 +83,15 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:
         print 'Type your poem number, and (optionally) your stanza number to generate trees.'
         print '> python drawtree 123114 3'
+
     elif len(sys.argv) == 2:
-        todo = map((lambda s: s.rstrip('</EOS> ').replace('</>','(/)').replace('<//>','(//)')), grab_file(sys.argv[1])  )
+        todo = [ s.rstrip('</EOS> ').replace('</>','(/)').replace('<//>','(//)')
+                 for s in  grab_file(sys.argv[1]) ]
         test(todo)
-    else: 
-        todo = map((lambda s: s.rstrip('</EOS> ').replace('</>','(/)').replace('<//>','(//)')), grab_stanza(sys.argv[1], int(sys.argv[2]))  ) 
+
+    else:
+        todo = [ s.rstrip('</EOS> ').replace('</>','(/)').replace('<//>','(//)')
+                 for s in  grab_stanza(sys.argv[1], int(sys.argv[2])) ]
         print grab_stanza(sys.argv[1], int(sys.argv[2]))
         print todo
         test(todo)
-
-

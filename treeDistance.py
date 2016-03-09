@@ -26,7 +26,7 @@ def strdist(a, b):
 class ottawaTree(object):
     def __init__(self, label):
         self.t = Tree(label, [])
-    
+
     def __str__(self):
         return str(self.t)
 
@@ -46,7 +46,7 @@ class ottawaTree(object):
 
         if tree == None:
             return []
-            
+
         kids = []
         for kid in [branch for branch in tree.t]:
             o = ottawaTree('c')
@@ -63,31 +63,15 @@ class ottawaTree(object):
 
 
     def addkid(self, branch, before=False):
-        if before:  
+        if before:
             self.t.insert(0, branch)
-        else:   
+        else:
             self.t.append(branch)
         return self
 
 
 ['CC','CD','DT','EX','FW','IN','JJ','JJR','JJS','LS','MD','NN','NNS','NNP','NNPS','PDT','POS','PRP',
 'PRP$','RB','RBR','RBS','RP','SYM','TO','UH','VB','VBD','VBG','VBN','VBP','VBZ','WDT','WP','WP$','WRB']
-
-
-
-
-
-
-
-
-
-
-
-def POS_difference(a,b):
-    
-
-
-
 
 
 
