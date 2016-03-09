@@ -304,4 +304,4 @@ for file in os.listdir(directory):
         write = open(os.path.join(directory, file), 'a')
         write.write('\n\n\n\n\n' + str(thispoem))
         write.close()
-print
+print()

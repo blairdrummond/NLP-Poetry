@@ -73,7 +73,7 @@ def regexify(x):
     else:
         x = x
 
-    x = map(re.escape , x) 
+    x = list(map(re.escape , x)) 
     x = r'(.|\n)*?'.join(x)
         
     x = x + r"(.|\n)*?(?=(\n|\((?![^A-Za-z0-9] .\))))"
@@ -120,9 +120,9 @@ for file in os.listdir(poems):        # iterate through every poem file in input
                         split  = tree_buffer_A.partition(l) # Partition the tree at the match
 
                     except BaseException:                   # Notify user of any errors, then exit
-                        print file
-                        print line
-                        print l
+                        print(file)
+                        print(line)
+                        print(l)
                         exit()
 
                                         # Load into the buffer:
@@ -145,9 +145,9 @@ for file in os.listdir(poems):        # iterate through every poem file in input
                     breaktype     = ' </> '                    # Set the break to line-break, this may be overridden later
 
                 else: # Failed regex  # If failures occur, this
-                    print file        # block helps to highlight
-                    print regex       # the problem.
-                    print
+                    print(file)        # block helps to highlight
+                    print(regex)       # the problem.
+                    print()
                     i=i+1             #
 
             elif not first:
@@ -160,8 +160,8 @@ for file in os.listdir(poems):        # iterate through every poem file in input
 
 # Print the number of errors
 if i == 1:
-    print i, "Fail"
+    print(i, "Fail")
 elif i>1:
-    print i, "Fails"
+    print(i, "Fails")
 else:
-    print
+    print()
