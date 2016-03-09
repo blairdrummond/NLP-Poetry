@@ -22,10 +22,11 @@ Java 8, Stanford-CoreNLP, python, nltk, zss, editdist, tkinter for python
 **MAY NOT BE COMPREHENSIVE!**
 
 
-## Links:
+## Links
 
+|  Tool                      | Homepage                                        |
 |:---------------------------|:------------------------------------------------|
-|  Stanford CoreNLP          | http://nlp.stanford.edu/software/corenlp.shtml  |
+| Stanford CoreNLP           | http://nlp.stanford.edu/software/corenlp.shtml  |
 | Natural Language Tool Kit  | http://www.nltk.org/                            |
 | editdist                   | http://www.mindrot.org/projects/py-editdist/    |
 | Zhang-Shasha tree distance | https://github.com/timtadh/zhang-shasha         |
