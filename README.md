@@ -24,7 +24,6 @@ Java 8, Stanford-CoreNLP, python, nltk, zss, editdist, tkinter for python
 
 ## Links:
 
-|                            |                                                 |
 |:---------------------------|:------------------------------------------------|
 |  Stanford CoreNLP          | http://nlp.stanford.edu/software/corenlp.shtml  |
 | Natural Language Tool Kit  | http://www.nltk.org/                            |
