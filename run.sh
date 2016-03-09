@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-#
+
+# NOTE!!! You need all the java files in the stanfornd-corenlp folder
+# in order for this to run. They aren't kept here becuase you need to keep
+# them up to date.
+
+
 # Runs Stanford CoreNLP.
 #
 # Place annotated poems in /poems/, run this, recieve poems with appended statistics in /output/ TODO
@@ -98,7 +103,7 @@ echo
 echo Loading all .txt files in /"$input"/
 echo
 
-core=( $(find stanford\-corenlp\-[0-9]\.[0-9]\.[0-9]\.jar) )
+core=(   $(find stanford\-corenlp\-[0-9]\.[0-9]\.[0-9]\.jar) )
 models=( $(find stanford\-corenlp\-[0-9]\.[0-9]\.[0-9]\-models\.jar) )
 ejml=( $(find ejml\-[0-9]\.*[0-9]\.jar) )
 

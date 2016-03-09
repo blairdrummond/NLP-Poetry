@@ -40,6 +40,3 @@ Natural Language Tool Kit (nltk) --> http://www.nltk.org/
 editdist (Levenshtein in Python) --> http://www.mindrot.org/projects/py-editdist/
 
 Zhang-Shasha tree distance       --> https://github.com/timtadh/zhang-shasha
-
-
-
